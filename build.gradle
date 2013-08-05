@@ -1,0 +1,9 @@
+allprojects {
+    apply plugin: 'idea'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'war'
+    apply plugin: 'jetty'
+}
