@@ -1,5 +1,6 @@
 project.ext {
     servletVersion = "2.5"
+    jstlVersion = "1.2"
 }
 
 dependencies {
@@ -7,5 +8,6 @@ dependencies {
         mavenCentral()
     }
 
-    providedCompile  "javax.servlet:servlet-api:$servletVersion"
+    providedCompile "javax.servlet:servlet-api:$servletVersion"
+    providedCompile "jstl:jstl:$jstlVersion"
 }

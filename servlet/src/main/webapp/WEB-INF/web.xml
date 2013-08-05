@@ -1,19 +1,27 @@
 <web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
-    <servlet>
-        <servlet-name>Hello</servlet-name>
-        <servlet-class>org.kiwi.servlet.HelloServlet</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>Hello</servlet-name>
         <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Home</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/login</url-pattern>
     </servlet-mapping>
 
     <servlet>
         <servlet-name>Login</servlet-name>
         <servlet-class>org.kiwi.servlet.LoginServlet</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>Login</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>
+    <servlet>
+        <servlet-name>Hello</servlet-name>
+        <servlet-class>org.kiwi.servlet.HelloServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Home</servlet-name>
+        <servlet-class>org.kiwi.servlet.HomeServlet</servlet-class>
+    </servlet>
 </web-app>

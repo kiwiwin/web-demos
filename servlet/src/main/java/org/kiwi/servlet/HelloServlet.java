@@ -5,12 +5,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Date;
 
 public class HelloServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("name", req.getSession().getAttribute("name"));
-        getServletContext().getRequestDispatcher("/WEB-INF/pages/hello.jsp").forward(req, resp);
+        toHelloPage(req, resp);
+    }
+
+    private void toHelloPage(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("page", "hello.jsp");
+        getServletContext().getRequestDispatcher("/WEB-INF/pages/main.jsp").forward(req, resp);
     }
 }

@@ -10,7 +10,21 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/WEB-INF/pages/login.jsp").forward(req, resp);
+        if (req.getParameter("type").equals("login")) {
+            toLoginPage(req, resp);
+        } else if (req.getParameter("type").equals("logout")) {
+            clearName(req);
+            toLoginPage(req, resp);
+        }
+    }
+
+    private void clearName(HttpServletRequest req) {
+        req.getSession().removeAttribute("name");
+    }
+
+    private void toLoginPage(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("page", "login.jsp");
+        getServletContext().getRequestDispatcher("/WEB-INF/pages/main.jsp").forward(req, resp);
     }
 
     @Override
