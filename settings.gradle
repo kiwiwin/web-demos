@@ -1,1 +1,1 @@
-include 'servlet'
+include 'servlet', 'staticpage'
