@@ -1,1 +1,1 @@
-include 'servlet', 'staticpage'
+include 'servlet', 'staticpage', 'springmvc'

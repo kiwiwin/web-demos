@@ -1,0 +1,3 @@
+gradle createJavaProject -PnewProjectName=$1
+gradle appendSubproject -Psubname=$1
+gradle idea
