@@ -27,4 +27,14 @@ public class UserController {
     public ModelMap getUsers() {
         return new ModelMap("users", asList("lucy", "jack", "kiwi"));
     }
+
+    @RequestMapping(value = "/invalid", method = RequestMethod.GET)
+    public void invalidUser() {
+        throw new InvalidUserException();
+    }
+
+    @RequestMapping(value = "/exception", method = RequestMethod.GET)
+    public void throwAnException() {
+        throw new RuntimeException("this is an runtime exception");
+    }
 }
